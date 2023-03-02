@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} sport {% endblock %}
+
+
+{% block content %}
+
+    {% for sport in sport_news %}
+        <div class="card">
+            <div class="col-sm-12">
+                <div class="col-md-4">
+                    <img src="{{sport.image.url}}" class="img-fluid rounded-start" alt="..."  style="width: 350px;">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <p class="card-text"><i class="fa fa-calendar" aria-hidden="true"></i> <span class="text-muted">{{sport.publish_time}}</span></p>
+                        <h5 class="card-title">{{sport.title}}</h5>
+                        <!-- <p class="card-text">{{local.body}}</p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

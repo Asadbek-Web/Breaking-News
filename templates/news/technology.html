@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} Technology {% endblock %}
+
+
+{% block content %}
+
+    {% for technology in technology_news %}
+        <div class="card">
+            <div class="col-sm-12">
+                <div class="col-md-4">
+                    <img src="{{technology.image.url}}" class="img-fluid rounded-start" alt="..."  style="width: 350px;">
+                </div>
+                <div class="col-md-8">  
+                    <div class="card-body">
+                        <p class="card-text"><i class="fa fa-calendar" aria-hidden="true"></i> <span class="text-muted">{{technology.publish_time}}</span></p>
+                        <h5 class="card-title">{{technology.title}}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

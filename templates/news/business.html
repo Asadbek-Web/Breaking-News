@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} Business {% endblock %}
+
+
+{% block content %}
+
+    {% for business in business_news %}
+        <div class="card">
+            <div class="col-sm-12">
+                <div class="col-md-4">
+                    <img src="{{business.image.url}}" class="img-fluid rounded-start" alt="..."  style="width: 350px;">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <p class="card-text"><i class="fa fa-calendar" aria-hidden="true"></i> <span class="text-muted">{{business.publish_time}}</span></p>
+                        <h5 class="card-title">{{business.title}}</h5>
+                        <!-- <p class="card-text">{{local.body}}</p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
